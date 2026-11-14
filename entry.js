@@ -8,8 +8,7 @@ let paused=false,lenis=null
 function setup(){lenis?.destroy();lenis=null;document.body.classList.toggle('motion-stopped',paused||reduce.matches);if(!paused&&!reduce.matches&&!navigator.connection?.saveData)lenis=new Lenis({autoRaf:true,lerp:.12,syncTouch:false,anchors:true,allowNestedScroll:true,prevent:el=>!!el.closest('dialog')});if(paused||reduce.matches)video.pause()}
 setup();reduce.addEventListener('change',setup)
 motion.addEventListener('click',()=>{paused=!paused;motion.setAttribute('aria-pressed',String(paused));motion.innerHTML=paused?'Retomar efeitos <span aria-hidden="true">▷</span>':'Pausar efeitos <span aria-hidden="true">Ⅱ</span>';setup()})
-function loadVideo(){const source=video.querySelector('source');if(!source.src){source.src=source.dataset.src;video.load()}}
-play.addEventListener('click',()=>{loadVideo();video.play().catch(()=>{})})
+play.addEventListener('click',()=>{video.play().catch(()=>{})})
 video.addEventListener('play',()=>{player.dataset.playing='true'})
 video.addEventListener('pause',()=>{player.dataset.playing='false'})
 const filmObserver=new IntersectionObserver(entries=>{for(const item of entries){if(!item.isIntersecting)video.pause()}},{threshold:.1});filmObserver.observe(video)
