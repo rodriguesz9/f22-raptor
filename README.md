@@ -63,3 +63,7 @@ A abertura usa o próprio registro oficial como vídeo de fundo. A posição da 
 A tipografia técnica e inclinada usa **Chakra Petch**, distribuída pelo Google Fonts sob SIL Open Font License. Arquivos e licença ficam em `media/`; nenhuma fonte ou marca proprietária da Fórmula1 foi copiada. Os princípios das skills oficiais GSAP ScrollTrigger e Performance orientaram o percurso finito, as leituras de layout agrupadas e o fallback. O controlador nativo foi mantido para não duplicar o scheduler de Lenis com outra dependência.
 
 Com `prefers-reduced-motion`, economia de dados ou sem JavaScript, a abertura usa fotografia estática; nenhum MP4 do hero é carregado inicialmente nesses modos. A pausa global interrompe o vínculo com a rolagem e volta à fotografia, preservando o arquivo já carregado em memória. `docs/scroll-hero-qa.json` registra as quatro larguras, o percurso0→meio→fim→retorno e o fallback semJS.
+
+## Correção de entrega e animação
+
+O hero é a única instância de vídeo da página. GSAP3.13 e ScrollTrigger locais controlam progresso e entrada tipográfica; Lenis usa o mesmo ticker. Busca do vídeo serializada para não acumular seeks. CSS e scripts recebem hash no build para evitar mistura entre HTML novo e assets antigos do cache. “Ativar animação” permite escolha explícita quando movimento reduzido estiver ativo.

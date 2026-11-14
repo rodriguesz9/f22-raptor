@@ -75,18 +75,13 @@ try {
   await normal.screenshot({path:path.join(docs,'inicio.jpg'),type:'jpeg',quality:88});
   await normal.locator('#ensaio').scrollIntoViewIfNeeded(); await normal.waitForTimeout(250);
   await normal.screenshot({path:path.join(docs,'detalhe.jpg'),type:'jpeg',quality:88});
-  // Exercise the actual film independently of the background video and custom play button.
-  const film = normal.locator('.film video');
-  await film.scrollIntoViewIfNeeded(); await normal.waitForTimeout(200);
-  await film.evaluate(video=>video.play());
-  await normal.waitForFunction(()=>document.querySelector('.film video').currentTime>0);
+  const visual = await normal.evaluate(()=>({videos:document.querySelectorAll('video').length,font:getComputedStyle(document.querySelector('h1')).fontFamily,triggers:window.ScrollTrigger.getAll().length}));
+  if(visual.videos!==1 || !visual.font.includes('Chakra') || visual.triggers<1) throw Error('Font/GSAP/video check failed '+JSON.stringify(visual));
   await normal.locator('.motion-button').click();
-  const pausedTime=await film.evaluate(video=>video.currentTime);
-  await normal.waitForTimeout(300);
-  const pausedTimeAfter=await film.evaluate(video=>video.currentTime);
-  if (!await film.evaluate(video=>video.paused) || Math.abs(pausedTimeAfter-pausedTime)>.05) throw Error('Global pause did not stop the film');
-  if (await normal.evaluate(()=>document.documentElement.classList.contains('lenis'))) throw Error('Global pause did not destroy Lenis');
-  const motionQA={lenisActive,seeks,firstPlayWithoutCustomButton:true,pausedTime,pausedTimeAfter,pauseStopsVideo:true,pauseDestroysLenis:true};
+  if(await normal.evaluate(()=>document.documentElement.classList.contains('lenis'))) throw Error('Pause did not destroy Lenis');
+  await normal.locator('.motion-button').click();
+  await normal.waitForTimeout(200);
+  const motionQA={lenisActive,seeks,...visual,pauseDestroysLenis:true};
   await normal.close();
   const nojs=await browser.newPage({viewport:{width:390,height:800},javaScriptEnabled:false});
   await nojs.goto(url);

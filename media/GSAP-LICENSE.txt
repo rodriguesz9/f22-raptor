@@ -1,0 +1,5 @@
+GSAP 3.13.0 and ScrollTrigger
+Copyright 2025 GreenSock/Webflow. All rights reserved.
+Distributed with original proprietary notices intact.
+Terms: https://gsap.com/standard-license/
+Source package: https://www.npmjs.com/package/gsap

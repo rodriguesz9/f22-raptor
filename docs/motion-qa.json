@@ -18,9 +18,8 @@
       "paused": true
     }
   ],
-  "firstPlayWithoutCustomButton": true,
-  "pausedTime": 0.0603,
-  "pausedTimeAfter": 0.0603,
-  "pauseStopsVideo": true,
+  "videos": 1,
+  "font": "Chakra, Arial, sans-serif",
+  "triggers": 1,
   "pauseDestroysLenis": true
 }
