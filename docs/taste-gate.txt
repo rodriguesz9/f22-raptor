@@ -1,0 +1,6 @@
+gate: checking index.html (tech); this takes a few minutes on a CPU Chrome
+gate: no FAIL in what ran, but not everything ran
+  3 WARN (not blocking), first: copy-two-fragment copy x2: "Dez segundos. Outro p...", "Im; copy-eyebrows (the copy); copy-rhythm (the copy)
+  not checked: consistency.mjs gave no report (exit 1: Error: No Chrome, Edge or Chromium found; set CHROME_PATH.); check.mjs could not run (exit 2: no Chrome found (set CHROME_PATH))
+Do not rerun it: put the GATE line and what was not checked in your report, then finish.
+GATE: ERROR (consistency.mjs gave no report (exit 1: Error: No Chrome, Edge or Chromium found; set CHROME_PATH.); check.mjs could not run (exit 2: no Chrome found (set CHROME_PATH)))
