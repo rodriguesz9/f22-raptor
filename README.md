@@ -67,3 +67,13 @@ Com `prefers-reduced-motion`, economia de dados ou sem JavaScript, a abertura us
 ## Correção de entrega e animação
 
 O hero é a única instância de vídeo da página. GSAP3.13 e ScrollTrigger locais controlam progresso e entrada tipográfica; Lenis usa o mesmo ticker. Busca do vídeo serializada para não acumular seeks. CSS e scripts recebem hash no build para evitar mistura entre HTML novo e assets antigos do cache. “Ativar animação” permite escolha explícita quando movimento reduzido estiver ativo.
+
+## Refinamento de fluidez e navegação
+
+A navbar foi refinada com uma proposta de apoio do Claude: sobreposição discreta ao filme, 72px no desktop/64px no celular, marca Chakra Petch, detalhes âmbar e controles de 44px. O menu mobile oferece Escape, foco restaurado e navegação por teclado.
+
+O hero agora apresenta os 240 quadros reais do mesmo vídeo em canvas. Um pacote WebP de aproximadamente 0,83 MiB evita 240 requisições separadas; apenas 16 bitmaps ficam no cache, com no máximo quatro decodificações concorrentes. A suavização usa o tempo transcorrido no ticker GSAP compartilhado com Lenis. O MP4 continua como fallback se canvas/quadros falharem; movimento reduzido mantém o pôster até ativação explícita. Não há segundo filme na página.
+
+Para regenerar os assets: `python3 scripts/generate-frames.py` (ffmpeg instalado), depois `python3 scripts/build.py`. `scripts/qa.mjs` verifica a ida e volta da sequência, pausa, fallback, opt-in, menu mobile, galeria, no-JS e 320/390/768/1440px.
+
+Comparação local de 3,5s de rolagem com a mesma fração do hero: 84 atualizações distintas/211 amostras na versão anterior e 205/211 na sequência suavizada. É um diagnóstico deste ambiente, não uma garantia de FPS em outros aparelhos. O vídeo original tem 24 quadros por segundo; a composição interpola quadros vizinhos, sem inventar detalhes do movimento.

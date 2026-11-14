@@ -48,22 +48,25 @@
         "paused": true
       },
       {
-        "time": 4.9775,
+        "time": 4.97875,
         "paused": true
       },
       {
-        "time": 9.85545,
+        "time": 9.857375,
         "paused": true
       },
       {
-        "time": 1.991,
+        "time": 1.9929166666666667,
         "paused": true
       }
     ],
     "videos": 1,
     "font": "Chakra, Arial, sans-serif",
     "triggers": 1,
-    "pauseDestroysLenis": true
+    "pauseDestroysLenis": true,
+    "renderer": "bounded canvas sequence",
+    "reducedMotionOptIn": true,
+    "videoFallback": true
   },
   {
     "noJS": true,

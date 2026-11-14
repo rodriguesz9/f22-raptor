@@ -4,3 +4,5 @@ dist/
 .env.*
 .taste-skill/
 __pycache__/
+
+media/flight-frames/
