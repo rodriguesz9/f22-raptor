@@ -1,0 +1,76 @@
+[
+  {
+    "width": 320,
+    "reducedMotion": true,
+    "overflow": false,
+    "broken": [],
+    "h1": 1,
+    "heroVideoLoaded": false,
+    "lenis": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "reducedMotion": true,
+    "overflow": false,
+    "broken": [],
+    "h1": 1,
+    "heroVideoLoaded": false,
+    "lenis": false,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "reducedMotion": true,
+    "overflow": false,
+    "broken": [],
+    "h1": 1,
+    "heroVideoLoaded": false,
+    "lenis": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "reducedMotion": true,
+    "overflow": false,
+    "broken": [],
+    "h1": 1,
+    "heroVideoLoaded": false,
+    "lenis": false,
+    "errors": []
+  },
+  {
+    "regularMotion": true,
+    "lenisActive": true,
+    "seeks": [
+      {
+        "time": 0,
+        "paused": true
+      },
+      {
+        "time": 4.9775,
+        "paused": true
+      },
+      {
+        "time": 9.85545,
+        "paused": true
+      },
+      {
+        "time": 1.991,
+        "paused": true
+      }
+    ],
+    "firstPlayWithoutCustomButton": true,
+    "pausedTime": 0.0603,
+    "pausedTimeAfter": 0.0603,
+    "pauseStopsVideo": true,
+    "pauseDestroysLenis": true
+  },
+  {
+    "noJS": true,
+    "posterFallback": true,
+    "height": 800,
+    "stage": 800,
+    "source": false
+  }
+]

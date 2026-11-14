@@ -14,3 +14,5 @@ Vídeo: arquivo público original `DOD_111702815.mp4` servido pelo player oficia
 Condições: https://www.dvidshub.net/about/copyright
 
 The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.
+
+Atualização do hero: `media/hero-flight.mp4` deriva de `media/flight.mp4`, com keyframes completos para seek por rolagem, sem alterar a autoria ou as condições de uso. Fontes `ChakraPetch-Medium.ttf` e `ChakraPetch-BoldItalic.ttf`: Google Fonts / The Chakra Petch Project Authors, SIL OFL; licença em `media/CHAKRA-PETCH-OFL.txt`. Fonte oficial: https://github.com/google/fonts/tree/main/ofl/chakrapetch.

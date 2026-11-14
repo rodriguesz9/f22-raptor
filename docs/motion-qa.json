@@ -1,8 +1,26 @@
 {
   "lenisActive": true,
-  "videoPlayed": true,
-  "pausedTime": 0.0518,
-  "pausedTimeAfter": 0.0518,
+  "seeks": [
+    {
+      "time": 0,
+      "paused": true
+    },
+    {
+      "time": 4.9775,
+      "paused": true
+    },
+    {
+      "time": 9.85545,
+      "paused": true
+    },
+    {
+      "time": 1.991,
+      "paused": true
+    }
+  ],
+  "firstPlayWithoutCustomButton": true,
+  "pausedTime": 0.0603,
+  "pausedTimeAfter": 0.0603,
   "pauseStopsVideo": true,
   "pauseDestroysLenis": true
 }

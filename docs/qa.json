@@ -1,37 +1,41 @@
 [
   {
     "width": 320,
+    "reducedMotion": true,
     "overflow": false,
     "broken": [],
     "h1": 1,
-    "videoLoaded": false,
+    "heroVideoLoaded": false,
     "lenis": false,
     "errors": []
   },
   {
     "width": 390,
+    "reducedMotion": true,
     "overflow": false,
     "broken": [],
     "h1": 1,
-    "videoLoaded": false,
+    "heroVideoLoaded": false,
     "lenis": false,
     "errors": []
   },
   {
     "width": 768,
+    "reducedMotion": true,
     "overflow": false,
     "broken": [],
     "h1": 1,
-    "videoLoaded": false,
+    "heroVideoLoaded": false,
     "lenis": false,
     "errors": []
   },
   {
     "width": 1440,
+    "reducedMotion": true,
     "overflow": false,
     "broken": [],
     "h1": 1,
-    "videoLoaded": false,
+    "heroVideoLoaded": false,
     "lenis": false,
     "errors": []
   }

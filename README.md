@@ -53,3 +53,13 @@ Lenis foi distribuído localmente a partir da instalação oficial npm existente
 ## Verificação
 
 Build com Python. QA de navegador em 320, 390, 768 e 1440px: largura, imagens, erros de JavaScript, comportamento de movimento reduzido e abertura/fechamento da galeria. Evidência em `docs/qa.json`; capturas em `docs/inicio.jpg` e `docs/detalhe.jpg`. A auditoria automatizada não substitui teste com leitor de tela ou dispositivo físico.
+
+## Hero com vídeo pela rolagem
+
+A abertura usa o próprio registro oficial como vídeo de fundo. A posição da página controla o quadro do filme, inclusive ao voltar: uma seção de200svh no desktop e150svh no celular mantém o palco sticky durante um percurso finito. Não há captura da roda do mouse, autoplay nem reprodução contínua. O progresso é calculado em um único `requestAnimationFrame` por demanda; a próxima busca aguarda `seeked`, evitando filas de decodificação.
+
+`media/hero-flight.mp4` é derivado do mesmo trecho oficial documentado em `docs/MEDIA-SOURCES.md`, sem áudio, H.264 com keyframes em todos os quadros (CRF27). Essa versão de aproximadamente1,7MB facilita buscar qualquer instante. Para servir vídeo, a hospedagem deve enviar `Content-Length` e preferencialmente suportar byte ranges; a Vercel suporta ambos. O player normal continua disponível na seção Em movimento.
+
+A tipografia técnica e inclinada usa **Chakra Petch**, distribuída pelo Google Fonts sob SIL Open Font License. Arquivos e licença ficam em `media/`; nenhuma fonte ou marca proprietária da Fórmula1 foi copiada. Os princípios das skills oficiais GSAP ScrollTrigger e Performance orientaram o percurso finito, as leituras de layout agrupadas e o fallback. O controlador nativo foi mantido para não duplicar o scheduler de Lenis com outra dependência.
+
+Com `prefers-reduced-motion`, economia de dados ou sem JavaScript, a abertura usa fotografia estática; nenhum MP4 do hero é carregado inicialmente nesses modos. A pausa global interrompe o vínculo com a rolagem e volta à fotografia, preservando o arquivo já carregado em memória. `docs/scroll-hero-qa.json` registra as quatro larguras, o percurso0→meio→fim→retorno e o fallback semJS.
